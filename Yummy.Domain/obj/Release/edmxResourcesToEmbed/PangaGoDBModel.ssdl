@@ -1,0 +1,519 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PangaGoDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="AspNetUsers">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="256" />
+    <Property Name="EmailConfirmed" Type="bit" Nullable="false" />
+    <Property Name="PasswordHash" Type="nvarchar(max)" />
+    <Property Name="SecurityStamp" Type="nvarchar(max)" />
+    <Property Name="PhoneNumber" Type="nvarchar(max)" />
+    <Property Name="PhoneNumberConfirmed" Type="bit" Nullable="false" />
+    <Property Name="TwoFactorEnabled" Type="bit" Nullable="false" />
+    <Property Name="LockoutEndDateUtc" Type="datetime" />
+    <Property Name="LockoutEnabled" Type="bit" Nullable="false" />
+    <Property Name="AccessFailedCount" Type="int" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="256" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Empresa">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="RFC" Type="nvarchar" MaxLength="50" />
+    <Property Name="RazonSocial" Type="nvarchar" MaxLength="150" />
+    <Property Name="Slogan" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="Imagen" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="Calificacion" Type="int" Nullable="false" />
+    <Property Name="FechaCrea" Type="datetime" Nullable="false" />
+    <Property Name="FechaModifica" Type="datetime" />
+    <Property Name="RegistroEliminado" Type="bit" Nullable="false" />
+    <Property Name="CupoSeguro" Type="bit" Nullable="false" />
+    <Property Name="Descripcion" Type="nvarchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="EmpresaHorario">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EmpresaId" Type="int" />
+    <Property Name="Dia" Type="int" />
+    <Property Name="Hora" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="FechaCrea" Type="datetime" Nullable="false" />
+    <Property Name="FechaModifica" Type="datetime" />
+    <Property Name="RegistroEliminado" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="EmpresaImagen">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EmpresaId" Type="int" Nullable="false" />
+    <Property Name="Url" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="FechaCrea" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="EmpresaServicio">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EmpresaId" Type="int" Nullable="false" />
+    <Property Name="ServicioId" Type="int" Nullable="false" />
+    <Property Name="FechaCrea" Type="datetime" Nullable="false" />
+    <Property Name="RegistroEliminado" Type="bit" Nullable="false" />
+    <Property Name="PrecioXPersonas" Type="int" />
+    <Property Name="PrecioXInfante" Type="int" />
+    <Property Name="Descuento" Type="int" />
+  </EntityType>
+  <EntityType Name="EmpresaZonaTuristica">
+    <Key>
+      <PropertyRef Name="EmpresaId" />
+      <PropertyRef Name="ZonaTuristicaId" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EmpresaId" Type="int" Nullable="false" />
+    <Property Name="ZonaTuristicaId" Type="int" Nullable="false" />
+    <Property Name="FechaCrea" Type="datetime" Nullable="false" />
+    <Property Name="RegistroEliminado" Type="bit" Nullable="false" />
+    <Property Name="PrecioXPersona" Type="int" Nullable="false" />
+    <Property Name="PrecioXInfante" Type="int" Nullable="false" />
+    <Property Name="Descuento" Type="int" Nullable="false" />
+    <Property Name="PrecioLancha" Type="int" />
+  </EntityType>
+  <EntityType Name="Entidad">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Codigo" Type="nvarchar" MaxLength="5" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LongLat">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ViajeId" Type="int" />
+    <Property Name="longitud" Type="float" />
+    <Property Name="latitud" Type="float" />
+  </EntityType>
+  <EntityType Name="Municipio">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EntidadId" Type="int" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="Codigo" Type="nvarchar" MaxLength="5" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Operador">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EmpresaId" Type="int" Nullable="false" />
+    <Property Name="AspNetUsersId" Type="nvarchar" MaxLength="128" />
+    <Property Name="PrimerNombre" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="SegundoNombre" Type="nvarchar" MaxLength="20" />
+    <Property Name="ApellidoPaterno" Type="nvarchar" MaxLength="20" />
+    <Property Name="ApellidoMaterno" Type="nvarchar" MaxLength="20" />
+    <Property Name="FechaNacimiento" Type="nchar" MaxLength="10" />
+    <Property Name="Ciudad" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Colonia" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Calle" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="NoInterior" Type="int" Nullable="false" />
+    <Property Name="NoExterior" Type="int" Nullable="false" />
+    <Property Name="CodigoPostal" Type="int" Nullable="false" />
+    <Property Name="UrlFoto" Type="nvarchar" MaxLength="200" />
+    <Property Name="FechaCrea" Type="datetime" Nullable="false" />
+    <Property Name="FechaModifica" Type="datetime" />
+    <Property Name="Activo" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Producto">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="Descripcion" Type="nvarchar" MaxLength="500" />
+    <Property Name="FechaCrea" Type="datetime" Nullable="false" />
+    <Property Name="FechaModifica" Type="datetime" />
+    <Property Name="RegistroEliminado" Type="bit" Nullable="false" />
+    <Property Name="imagen" Type="nchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="RegistroServicio">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="EmpresaId" Type="int" />
+    <Property Name="UsuarioId" Type="int" Nullable="false" />
+    <Property Name="FechaRegistro" Type="date" />
+    <Property Name="HorarioRegistro" Type="time" Precision="7" />
+    <Property Name="PagoAdultos" Type="int" />
+    <Property Name="PagoMenores" Type="int" />
+    <Property Name="CantidadMenores" Type="int" />
+    <Property Name="CantidadAdultos" Type="int" />
+    <Property Name="TotalPersonas" Type="int" />
+    <Property Name="PagoServicio" Type="int" />
+    <Property Name="PagodeServicios" Type="int" />
+    <Property Name="CupoSeguro" Type="bit" Nullable="false" />
+    <Property Name="RegistroEliminado" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RegistroTarjeta">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UsuarioId" Type="int" Nullable="false" />
+    <Property Name="CustomerId" Type="nvarchar" MaxLength="256" />
+    <Property Name="CardId" Type="nvarchar" MaxLength="256" />
+    <Property Name="FechaRegistro" Type="date" />
+    <Property Name="RegistroEliminado" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RegistroViajes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="EmpresaId" Type="int" />
+    <Property Name="ViajeId" Type="int" />
+    <Property Name="Recaudado" Type="int" />
+    <Property Name="CantidadPasajeros" Type="int" />
+    <Property Name="HoraInicio" Type="time" Precision="7" />
+    <Property Name="HoraFinal" Type="time" Precision="7" />
+    <Property Name="Fecha" Type="date" />
+    <Property Name="Activo" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Servicio">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="Descripcion" Type="nvarchar" MaxLength="500" />
+    <Property Name="FechaCrea" Type="datetime" Nullable="false" />
+    <Property Name="FechaModifica" Type="datetime" />
+    <Property Name="RegistroEliminado" Type="bit" Nullable="false" />
+    <Property Name="Imagen" Type="nvarchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="Usuario">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="256" />
+    <Property Name="PrimerNombre" Type="nvarchar" MaxLength="128" />
+    <Property Name="SegundoNombre" Type="nvarchar" MaxLength="128" />
+    <Property Name="ApellidoPaterno" Type="nvarchar" MaxLength="128" />
+    <Property Name="ApellidoMaterno" Type="nvarchar" MaxLength="128" />
+    <Property Name="FechaNacimiento" Type="date" />
+    <Property Name="Ciudad" Type="nvarchar" MaxLength="128" />
+    <Property Name="Colonia" Type="nvarchar" MaxLength="128" />
+    <Property Name="Calle" Type="nvarchar" MaxLength="128" />
+    <Property Name="NoExterior" Type="int" />
+    <Property Name="NoInterior" Type="int" Nullable="false" />
+    <Property Name="CodigoPostal" Type="int" />
+    <Property Name="UrlFoto" Type="nvarchar" MaxLength="256" />
+    <Property Name="FechaCrea" Type="datetime" Nullable="false" />
+    <Property Name="FechaModifica" Type="datetime" />
+    <Property Name="Activo" Type="bit" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="UsuarioMobile">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Apellidos" Type="nvarchar" MaxLength="150" />
+    <Property Name="Usuario" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="Contrasena" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="FechaCrea" Type="datetime" Nullable="false" />
+    <Property Name="FechaModifica" Type="datetime" />
+    <Property Name="RegistroEliminado" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Viajes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EmpresaId" Type="int" />
+    <Property Name="OperadorId" Type="int" />
+    <Property Name="Partida" Type="nvarchar" MaxLength="150" />
+    <Property Name="Arribo" Type="nvarchar" MaxLength="150" />
+    <Property Name="Hora" Type="time" Precision="7" />
+    <Property Name="Dia" Type="int" />
+    <Property Name="Fecha" Type="date" />
+    <Property Name="CupoMaximo" Type="int" />
+    <Property Name="Activo" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ZonaTuristica">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MunicipioId" Type="int" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Descripcion" Type="nvarchar" MaxLength="500" />
+    <Property Name="Imagen" Type="nvarchar" MaxLength="150" />
+    <Property Name="FechaCrea" Type="datetime" Nullable="false" />
+    <Property Name="RegistroEliminado" Type="bit" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_EmpresaServicio_Empresa">
+    <End Role="Empresa" Type="Self.Empresa" Multiplicity="1" />
+    <End Role="EmpresaServicio" Type="Self.EmpresaServicio" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Empresa">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="EmpresaServicio">
+        <PropertyRef Name="EmpresaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EmpresaServicio_Servicio">
+    <End Role="Servicio" Type="Self.Servicio" Multiplicity="1" />
+    <End Role="EmpresaServicio" Type="Self.EmpresaServicio" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Servicio">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="EmpresaServicio">
+        <PropertyRef Name="ServicioId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EmpresaZonaTuristica_Empresa">
+    <End Role="Empresa" Type="Self.Empresa" Multiplicity="1" />
+    <End Role="EmpresaZonaTuristica" Type="Self.EmpresaZonaTuristica" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Empresa">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="EmpresaZonaTuristica">
+        <PropertyRef Name="EmpresaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EmpresaZonaTuristica_ZonaTuristica">
+    <End Role="ZonaTuristica" Type="Self.ZonaTuristica" Multiplicity="1" />
+    <End Role="EmpresaZonaTuristica" Type="Self.EmpresaZonaTuristica" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ZonaTuristica">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="EmpresaZonaTuristica">
+        <PropertyRef Name="ZonaTuristicaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Horario_Empresa">
+    <End Role="Empresa" Type="Self.Empresa" Multiplicity="0..1" />
+    <End Role="EmpresaHorario" Type="Self.EmpresaHorario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Empresa">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="EmpresaHorario">
+        <PropertyRef Name="EmpresaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Imagenes_Empresa">
+    <End Role="Empresa" Type="Self.Empresa" Multiplicity="1" />
+    <End Role="EmpresaImagen" Type="Self.EmpresaImagen" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Empresa">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="EmpresaImagen">
+        <PropertyRef Name="EmpresaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Municipios_Entidad">
+    <End Role="Entidad" Type="Self.Entidad" Multiplicity="1" />
+    <End Role="Municipio" Type="Self.Municipio" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Entidad">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Municipio">
+        <PropertyRef Name="EntidadId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Operador_AspNetUsers">
+    <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="0..1" />
+    <End Role="Operador" Type="Self.Operador" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Operador">
+        <PropertyRef Name="AspNetUsersId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ZonaTuristica_Municipio">
+    <End Role="Municipio" Type="Self.Municipio" Multiplicity="1" />
+    <End Role="ZonaTuristica" Type="Self.ZonaTuristica" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Municipio">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ZonaTuristica">
+        <PropertyRef Name="MunicipioId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Operador_Empresa">
+    <End Role="Empresa" Type="Self.Empresa" Multiplicity="1" />
+    <End Role="Operador" Type="Self.Operador" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Empresa">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Operador">
+        <PropertyRef Name="EmpresaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+  <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="spInsRegistro" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="EmpresaId" Type="int" Mode="In" />
+    <Parameter Name="UsuarioId" Type="int" Mode="In" />
+    <Parameter Name="FechaRegistro" Type="datetime" Mode="In" />
+    <Parameter Name="HorarioRegistro" Type="datetime" Mode="In" />
+    <Parameter Name="PagoAdultos" Type="int" Mode="In" />
+    <Parameter Name="PagoMenores" Type="int" Mode="In" />
+    <Parameter Name="CantidadMenores" Type="int" Mode="In" />
+    <Parameter Name="CantidadAdultos" Type="int" Mode="In" />
+    <Parameter Name="TotalPersonas" Type="int" Mode="In" />
+    <Parameter Name="PagoServicio" Type="int" Mode="In" />
+    <Parameter Name="PagodeServicios" Type="int" Mode="In" />
+    <Parameter Name="CupoSeguro" Type="bit" Mode="In" />
+    <Parameter Name="RegistroEliminado" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="spSelEmpresaXId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="EmpresaId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="spSelEmpresaXZonaTuristica" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ZonaTuristicaId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="spSelHorarioXEmpresa" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="EmpresaId" Type="int" Mode="In" />
+    <Parameter Name="Dia" Type="int" Mode="In" />
+  </Function>
+  <Function Name="spSelImagenesXEmpresa" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="EmpresaId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="spSelPrecioXEmpresa" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="EmpresaId" Type="int" Mode="In" />
+    <Parameter Name="ZonaTuristicaId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="spSelPrecioXServicio" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="EmpresaId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="spSelServicioXEmpresa" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="EmpresaId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="spSelServicioXId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ServicioId" Type="int" Mode="In" />
+  </Function>
+  <EntityContainer Name="PangaGoDBModelStoreContainer">
+    <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUsers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Empresa" EntityType="Self.Empresa" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EmpresaHorario" EntityType="Self.EmpresaHorario" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EmpresaImagen" EntityType="Self.EmpresaImagen" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EmpresaServicio" EntityType="Self.EmpresaServicio" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EmpresaZonaTuristica" EntityType="Self.EmpresaZonaTuristica" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Entidad" EntityType="Self.Entidad" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LongLat" EntityType="Self.LongLat" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Municipio" EntityType="Self.Municipio" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Operador" EntityType="Self.Operador" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Producto" EntityType="Self.Producto" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RegistroServicio" EntityType="Self.RegistroServicio" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RegistroTarjeta" EntityType="Self.RegistroTarjeta" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RegistroViajes" EntityType="Self.RegistroViajes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Servicio" EntityType="Self.Servicio" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Usuario" EntityType="Self.Usuario" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UsuarioMobile" EntityType="Self.UsuarioMobile" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Viajes" EntityType="Self.Viajes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ZonaTuristica" EntityType="Self.ZonaTuristica" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_EmpresaServicio_Empresa" Association="Self.FK_EmpresaServicio_Empresa">
+      <End Role="Empresa" EntitySet="Empresa" />
+      <End Role="EmpresaServicio" EntitySet="EmpresaServicio" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EmpresaServicio_Servicio" Association="Self.FK_EmpresaServicio_Servicio">
+      <End Role="Servicio" EntitySet="Servicio" />
+      <End Role="EmpresaServicio" EntitySet="EmpresaServicio" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EmpresaZonaTuristica_Empresa" Association="Self.FK_EmpresaZonaTuristica_Empresa">
+      <End Role="Empresa" EntitySet="Empresa" />
+      <End Role="EmpresaZonaTuristica" EntitySet="EmpresaZonaTuristica" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EmpresaZonaTuristica_ZonaTuristica" Association="Self.FK_EmpresaZonaTuristica_ZonaTuristica">
+      <End Role="ZonaTuristica" EntitySet="ZonaTuristica" />
+      <End Role="EmpresaZonaTuristica" EntitySet="EmpresaZonaTuristica" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Horario_Empresa" Association="Self.FK_Horario_Empresa">
+      <End Role="Empresa" EntitySet="Empresa" />
+      <End Role="EmpresaHorario" EntitySet="EmpresaHorario" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Imagenes_Empresa" Association="Self.FK_Imagenes_Empresa">
+      <End Role="Empresa" EntitySet="Empresa" />
+      <End Role="EmpresaImagen" EntitySet="EmpresaImagen" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Municipios_Entidad" Association="Self.FK_Municipios_Entidad">
+      <End Role="Entidad" EntitySet="Entidad" />
+      <End Role="Municipio" EntitySet="Municipio" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Operador_AspNetUsers" Association="Self.FK_Operador_AspNetUsers">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="Operador" EntitySet="Operador" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ZonaTuristica_Municipio" Association="Self.FK_ZonaTuristica_Municipio">
+      <End Role="Municipio" EntitySet="Municipio" />
+      <End Role="ZonaTuristica" EntitySet="ZonaTuristica" />
+    </AssociationSet>
+    <AssociationSet Name="Operador_Empresa" Association="Self.Operador_Empresa">
+      <End Role="Empresa" EntitySet="Empresa" />
+      <End Role="Operador" EntitySet="Operador" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

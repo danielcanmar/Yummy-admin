@@ -1,0 +1,15 @@
+D:\Projects\ecommerce-admin\Ecommerce.IdentityLibrary\bin\Debug\Ecommerce.IdentityLibrary.dll.config
+D:\Projects\ecommerce-admin\Ecommerce.IdentityLibrary\bin\Debug\Ecommerce.IdentityLibrary.dll
+D:\Projects\ecommerce-admin\Ecommerce.IdentityLibrary\bin\Debug\Ecommerce.IdentityLibrary.pdb
+D:\Projects\ecommerce-admin\Ecommerce.IdentityLibrary\bin\Debug\EntityFramework.dll
+D:\Projects\ecommerce-admin\Ecommerce.IdentityLibrary\bin\Debug\EntityFramework.SqlServer.dll
+D:\Projects\ecommerce-admin\Ecommerce.IdentityLibrary\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+D:\Projects\ecommerce-admin\Ecommerce.IdentityLibrary\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\Projects\ecommerce-admin\Ecommerce.IdentityLibrary\bin\Debug\EntityFramework.xml
+D:\Projects\ecommerce-admin\Ecommerce.IdentityLibrary\bin\Debug\EntityFramework.SqlServer.xml
+D:\Projects\ecommerce-admin\Ecommerce.IdentityLibrary\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+D:\Projects\ecommerce-admin\Ecommerce.IdentityLibrary\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\Projects\ecommerce-admin\Ecommerce.IdentityLibrary\obj\Debug\Ecommerce.IdentityLibrary.csproj.CoreCompileInputs.cache
+D:\Projects\ecommerce-admin\Ecommerce.IdentityLibrary\obj\Debug\Ecommerce.IdentityLibrary.csproj.CopyComplete
+D:\Projects\ecommerce-admin\Ecommerce.IdentityLibrary\obj\Debug\Ecommerce.IdentityLibrary.dll
+D:\Projects\ecommerce-admin\Ecommerce.IdentityLibrary\obj\Debug\Ecommerce.IdentityLibrary.pdb

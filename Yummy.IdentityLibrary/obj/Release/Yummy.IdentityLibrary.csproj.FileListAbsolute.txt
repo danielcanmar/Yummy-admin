@@ -1,0 +1,16 @@
+C:\Users\Daniel\Desktop\Project\webApi\Yummy-admin\Yummy.IdentityLibrary\bin\Release\Yummy.IdentityLibrary.dll.config
+C:\Users\Daniel\Desktop\Project\webApi\Yummy-admin\Yummy.IdentityLibrary\bin\Release\Yummy.IdentityLibrary.dll
+C:\Users\Daniel\Desktop\Project\webApi\Yummy-admin\Yummy.IdentityLibrary\bin\Release\Yummy.IdentityLibrary.pdb
+C:\Users\Daniel\Desktop\Project\webApi\Yummy-admin\Yummy.IdentityLibrary\bin\Release\EntityFramework.dll
+C:\Users\Daniel\Desktop\Project\webApi\Yummy-admin\Yummy.IdentityLibrary\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\Daniel\Desktop\Project\webApi\Yummy-admin\Yummy.IdentityLibrary\bin\Release\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Daniel\Desktop\Project\webApi\Yummy-admin\Yummy.IdentityLibrary\bin\Release\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Daniel\Desktop\Project\webApi\Yummy-admin\Yummy.IdentityLibrary\bin\Release\EntityFramework.xml
+C:\Users\Daniel\Desktop\Project\webApi\Yummy-admin\Yummy.IdentityLibrary\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\Daniel\Desktop\Project\webApi\Yummy-admin\Yummy.IdentityLibrary\bin\Release\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Daniel\Desktop\Project\webApi\Yummy-admin\Yummy.IdentityLibrary\bin\Release\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\Daniel\Desktop\Project\webApi\Yummy-admin\Yummy.IdentityLibrary\obj\Release\Yummy.IdentityLibrary.csprojResolveAssemblyReference.cache
+C:\Users\Daniel\Desktop\Project\webApi\Yummy-admin\Yummy.IdentityLibrary\obj\Release\Yummy.IdentityLibrary.csproj.CoreCompileInputs.cache
+C:\Users\Daniel\Desktop\Project\webApi\Yummy-admin\Yummy.IdentityLibrary\obj\Release\Yummy.IdentityLibrary.csproj.CopyComplete
+C:\Users\Daniel\Desktop\Project\webApi\Yummy-admin\Yummy.IdentityLibrary\obj\Release\Yummy.IdentityLibrary.dll
+C:\Users\Daniel\Desktop\Project\webApi\Yummy-admin\Yummy.IdentityLibrary\obj\Release\Yummy.IdentityLibrary.pdb

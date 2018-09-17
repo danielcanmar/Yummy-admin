@@ -1,0 +1,16 @@
+D:\Projects\pvt-admin\PVT.IdentityLibrary\bin\Release\PVT.IdentityLibrary.dll.config
+D:\Projects\pvt-admin\PVT.IdentityLibrary\bin\Release\PVT.IdentityLibrary.dll
+D:\Projects\pvt-admin\PVT.IdentityLibrary\bin\Release\PVT.IdentityLibrary.pdb
+D:\Projects\pvt-admin\PVT.IdentityLibrary\bin\Release\EntityFramework.dll
+D:\Projects\pvt-admin\PVT.IdentityLibrary\bin\Release\EntityFramework.SqlServer.dll
+D:\Projects\pvt-admin\PVT.IdentityLibrary\bin\Release\Microsoft.AspNet.Identity.Core.dll
+D:\Projects\pvt-admin\PVT.IdentityLibrary\bin\Release\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\Projects\pvt-admin\PVT.IdentityLibrary\bin\Release\EntityFramework.xml
+D:\Projects\pvt-admin\PVT.IdentityLibrary\bin\Release\EntityFramework.SqlServer.xml
+D:\Projects\pvt-admin\PVT.IdentityLibrary\bin\Release\Microsoft.AspNet.Identity.Core.xml
+D:\Projects\pvt-admin\PVT.IdentityLibrary\bin\Release\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\Projects\pvt-admin\PVT.IdentityLibrary\obj\Release\PVT.IdentityLibrary.csprojResolveAssemblyReference.cache
+D:\Projects\pvt-admin\PVT.IdentityLibrary\obj\Release\PVT.IdentityLibrary.csproj.CoreCompileInputs.cache
+D:\Projects\pvt-admin\PVT.IdentityLibrary\obj\Release\PVT.IdentityLibrary.csproj.CopyComplete
+D:\Projects\pvt-admin\PVT.IdentityLibrary\obj\Release\PVT.IdentityLibrary.dll
+D:\Projects\pvt-admin\PVT.IdentityLibrary\obj\Release\PVT.IdentityLibrary.pdb

@@ -1,0 +1,16 @@
+C:\Users\Daniel\Desktop\Project\webApi\pangago-admin\PangaGo.IdentityLibrary\bin\Release\PangaGo.IdentityLibrary.dll.config
+C:\Users\Daniel\Desktop\Project\webApi\pangago-admin\PangaGo.IdentityLibrary\bin\Release\PangaGo.IdentityLibrary.dll
+C:\Users\Daniel\Desktop\Project\webApi\pangago-admin\PangaGo.IdentityLibrary\bin\Release\PangaGo.IdentityLibrary.pdb
+C:\Users\Daniel\Desktop\Project\webApi\pangago-admin\PangaGo.IdentityLibrary\bin\Release\EntityFramework.dll
+C:\Users\Daniel\Desktop\Project\webApi\pangago-admin\PangaGo.IdentityLibrary\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\Daniel\Desktop\Project\webApi\pangago-admin\PangaGo.IdentityLibrary\bin\Release\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Daniel\Desktop\Project\webApi\pangago-admin\PangaGo.IdentityLibrary\bin\Release\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Daniel\Desktop\Project\webApi\pangago-admin\PangaGo.IdentityLibrary\bin\Release\EntityFramework.xml
+C:\Users\Daniel\Desktop\Project\webApi\pangago-admin\PangaGo.IdentityLibrary\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\Daniel\Desktop\Project\webApi\pangago-admin\PangaGo.IdentityLibrary\bin\Release\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Daniel\Desktop\Project\webApi\pangago-admin\PangaGo.IdentityLibrary\bin\Release\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\Daniel\Desktop\Project\webApi\pangago-admin\PangaGo.IdentityLibrary\obj\Release\PangaGo.IdentityLibrary.csprojResolveAssemblyReference.cache
+C:\Users\Daniel\Desktop\Project\webApi\pangago-admin\PangaGo.IdentityLibrary\obj\Release\PangaGo.IdentityLibrary.csproj.CoreCompileInputs.cache
+C:\Users\Daniel\Desktop\Project\webApi\pangago-admin\PangaGo.IdentityLibrary\obj\Release\PangaGo.IdentityLibrary.csproj.CopyComplete
+C:\Users\Daniel\Desktop\Project\webApi\pangago-admin\PangaGo.IdentityLibrary\obj\Release\PangaGo.IdentityLibrary.dll
+C:\Users\Daniel\Desktop\Project\webApi\pangago-admin\PangaGo.IdentityLibrary\obj\Release\PangaGo.IdentityLibrary.pdb

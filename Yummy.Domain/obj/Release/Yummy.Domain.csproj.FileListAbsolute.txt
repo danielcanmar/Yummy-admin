@@ -1,0 +1,14 @@
+C:\Users\Daniel\Desktop\Project\webApi\Yummy-admin\Yummy.Domain\bin\Release\Yummy.Domain.dll.config
+C:\Users\Daniel\Desktop\Project\webApi\Yummy-admin\Yummy.Domain\bin\Release\Yummy.Domain.dll
+C:\Users\Daniel\Desktop\Project\webApi\Yummy-admin\Yummy.Domain\bin\Release\Yummy.Domain.pdb
+C:\Users\Daniel\Desktop\Project\webApi\Yummy-admin\Yummy.Domain\bin\Release\Dapper.dll
+C:\Users\Daniel\Desktop\Project\webApi\Yummy-admin\Yummy.Domain\bin\Release\EntityFramework.dll
+C:\Users\Daniel\Desktop\Project\webApi\Yummy-admin\Yummy.Domain\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\Daniel\Desktop\Project\webApi\Yummy-admin\Yummy.Domain\bin\Release\Dapper.xml
+C:\Users\Daniel\Desktop\Project\webApi\Yummy-admin\Yummy.Domain\bin\Release\EntityFramework.xml
+C:\Users\Daniel\Desktop\Project\webApi\Yummy-admin\Yummy.Domain\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\Daniel\Desktop\Project\webApi\Yummy-admin\Yummy.Domain\obj\Release\Yummy.Domain.csprojResolveAssemblyReference.cache
+C:\Users\Daniel\Desktop\Project\webApi\Yummy-admin\Yummy.Domain\obj\Release\Yummy.Domain.csproj.CoreCompileInputs.cache
+C:\Users\Daniel\Desktop\Project\webApi\Yummy-admin\Yummy.Domain\obj\Release\Yummy.Domain.csproj.CopyComplete
+C:\Users\Daniel\Desktop\Project\webApi\Yummy-admin\Yummy.Domain\obj\Release\Yummy.Domain.dll
+C:\Users\Daniel\Desktop\Project\webApi\Yummy-admin\Yummy.Domain\obj\Release\Yummy.Domain.pdb

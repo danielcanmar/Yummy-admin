@@ -1,0 +1,465 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="YummyDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="YummyDBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Empresa" EntityType="YummyDBModel.Empresa" />
+    <EntitySet Name="EmpresaImagen" EntityType="YummyDBModel.EmpresaImagen" />
+    <EntitySet Name="EmpresaServicio" EntityType="YummyDBModel.EmpresaServicio" />
+    <EntitySet Name="EmpresaZonaTuristica" EntityType="YummyDBModel.EmpresaZonaTuristica" />
+    <EntitySet Name="Entidad" EntityType="YummyDBModel.Entidad" />
+    <EntitySet Name="Municipio" EntityType="YummyDBModel.Municipio" />
+    <EntitySet Name="Producto" EntityType="YummyDBModel.Producto" />
+    <EntitySet Name="Servicio" EntityType="YummyDBModel.Servicio" />
+    <EntitySet Name="UsuarioMobile" EntityType="YummyDBModel.UsuarioMobile" />
+    <EntitySet Name="ZonaTuristica" EntityType="YummyDBModel.ZonaTuristica" />
+    <AssociationSet Name="FK_EmpresaServicio_Empresa" Association="YummyDBModel.FK_EmpresaServicio_Empresa">
+      <End Role="Empresa" EntitySet="Empresa" />
+      <End Role="EmpresaServicio" EntitySet="EmpresaServicio" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EmpresaZonaTuristica_Empresa" Association="YummyDBModel.FK_EmpresaZonaTuristica_Empresa">
+      <End Role="Empresa" EntitySet="Empresa" />
+      <End Role="EmpresaZonaTuristica" EntitySet="EmpresaZonaTuristica" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Imagenes_Empresa" Association="YummyDBModel.FK_Imagenes_Empresa">
+      <End Role="Empresa" EntitySet="Empresa" />
+      <End Role="EmpresaImagen" EntitySet="EmpresaImagen" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EmpresaServicio_Servicio" Association="YummyDBModel.FK_EmpresaServicio_Servicio">
+      <End Role="Servicio" EntitySet="Servicio" />
+      <End Role="EmpresaServicio" EntitySet="EmpresaServicio" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EmpresaZonaTuristica_ZonaTuristica" Association="YummyDBModel.FK_EmpresaZonaTuristica_ZonaTuristica">
+      <End Role="ZonaTuristica" EntitySet="ZonaTuristica" />
+      <End Role="EmpresaZonaTuristica" EntitySet="EmpresaZonaTuristica" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Municipios_Entidad" Association="YummyDBModel.FK_Municipios_Entidad">
+      <End Role="Entidad" EntitySet="Entidad" />
+      <End Role="Municipio" EntitySet="Municipio" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ZonaTuristica_Municipio" Association="YummyDBModel.FK_ZonaTuristica_Municipio">
+      <End Role="Municipio" EntitySet="Municipio" />
+      <End Role="ZonaTuristica" EntitySet="ZonaTuristica" />
+    </AssociationSet>
+    <EntitySet Name="EmpresaHorario" EntityType="YummyDBModel.EmpresaHorario" />
+    <AssociationSet Name="FK_Horario_Empresa" Association="YummyDBModel.FK_Horario_Empresa">
+      <End Role="Empresa" EntitySet="Empresa" />
+      <End Role="EmpresaHorario" EntitySet="EmpresaHorario" />
+    </AssociationSet>
+    <EntitySet Name="AspNetUsers" EntityType="YummyDBModel.AspNetUsers" />
+    <EntitySet Name="Operador" EntityType="YummyDBModel.Operador" />
+    <AssociationSet Name="FK_Operador_AspNetUsers" Association="YummyDBModel.FK_Operador_AspNetUsers">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="Operador" EntitySet="Operador" />
+    </AssociationSet>
+    <AssociationSet Name="Operador_Empresa" Association="YummyDBModel.Operador_Empresa">
+      <End Role="Empresa" EntitySet="Empresa" />
+      <End Role="Operador" EntitySet="Operador" />
+    </AssociationSet>
+    <EntitySet Name="Usuario" EntityType="YummyDBModel.Usuario" />
+    <EntitySet Name="Viajes" EntityType="YummyDBModel.Viajes" />
+    <EntitySet Name="RegistroViajes" EntityType="YummyDBModel.RegistroViajes" />
+    <EntitySet Name="RegistroServicio" EntityType="YummyDBModel.RegistroServicio" />
+    <EntitySet Name="LongLat" EntityType="YummyDBModel.LongLat" />
+    <EntitySet Name="RegistroTarjeta" EntityType="YummyDBModel.RegistroTarjeta" />
+  </EntityContainer>
+  <EntityType Name="Empresa">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="RFC" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="RazonSocial" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Slogan" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Imagen" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Calificacion" Type="Int32" Nullable="false" />
+    <Property Name="FechaCrea" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="FechaModifica" Type="DateTime" Precision="3" />
+    <Property Name="RegistroEliminado" Type="Boolean" Nullable="false" />
+    <Property Name="CupoSeguro" Type="Boolean" Nullable="false" />
+    <Property Name="Descripcion" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="EmpresaServicio" Relationship="YummyDBModel.FK_EmpresaServicio_Empresa" FromRole="Empresa" ToRole="EmpresaServicio" />
+    <NavigationProperty Name="EmpresaZonaTuristica" Relationship="YummyDBModel.FK_EmpresaZonaTuristica_Empresa" FromRole="Empresa" ToRole="EmpresaZonaTuristica" />
+    <NavigationProperty Name="EmpresaImagen" Relationship="YummyDBModel.FK_Imagenes_Empresa" FromRole="Empresa" ToRole="EmpresaImagen" />
+    <NavigationProperty Name="EmpresaHorario" Relationship="YummyDBModel.FK_Horario_Empresa" FromRole="Empresa" ToRole="EmpresaHorario" />
+    <NavigationProperty Name="Operador" Relationship="YummyDBModel.Operador_Empresa" FromRole="Empresa" ToRole="Operador" />
+  </EntityType>
+  <EntityType Name="EmpresaImagen">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EmpresaId" Type="Int32" Nullable="false" />
+    <Property Name="Url" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="FechaCrea" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Empresa" Relationship="YummyDBModel.FK_Imagenes_Empresa" FromRole="EmpresaImagen" ToRole="Empresa" />
+  </EntityType>
+  <EntityType Name="EmpresaServicio">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EmpresaId" Type="Int32" Nullable="false" />
+    <Property Name="ServicioId" Type="Int32" Nullable="false" />
+    <Property Name="FechaCrea" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="RegistroEliminado" Type="Boolean" Nullable="false" />
+    <Property Name="PrecioXPersonas" Type="Int32" />
+    <Property Name="PrecioXInfante" Type="Int32" />
+    <Property Name="Descuento" Type="Int32" />
+    <NavigationProperty Name="Empresa" Relationship="YummyDBModel.FK_EmpresaServicio_Empresa" FromRole="EmpresaServicio" ToRole="Empresa" />
+    <NavigationProperty Name="Servicio" Relationship="YummyDBModel.FK_EmpresaServicio_Servicio" FromRole="EmpresaServicio" ToRole="Servicio" />
+  </EntityType>
+  <EntityType Name="EmpresaZonaTuristica">
+    <Key>
+      <PropertyRef Name="EmpresaId" />
+      <PropertyRef Name="ZonaTuristicaId" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EmpresaId" Type="Int32" Nullable="false" />
+    <Property Name="ZonaTuristicaId" Type="Int32" Nullable="false" />
+    <Property Name="FechaCrea" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="RegistroEliminado" Type="Boolean" Nullable="false" />
+    <Property Name="PrecioXPersona" Type="Int32" Nullable="false" />
+    <Property Name="PrecioXInfante" Type="Int32" Nullable="false" />
+    <Property Name="Descuento" Type="Int32" Nullable="false" />
+    <Property Name="PrecioLancha" Type="Int32" />
+    <NavigationProperty Name="Empresa" Relationship="YummyDBModel.FK_EmpresaZonaTuristica_Empresa" FromRole="EmpresaZonaTuristica" ToRole="Empresa" />
+    <NavigationProperty Name="ZonaTuristica" Relationship="YummyDBModel.FK_EmpresaZonaTuristica_ZonaTuristica" FromRole="EmpresaZonaTuristica" ToRole="ZonaTuristica" />
+  </EntityType>
+  <EntityType Name="Entidad">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Codigo" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Municipio" Relationship="YummyDBModel.FK_Municipios_Entidad" FromRole="Entidad" ToRole="Municipio" />
+  </EntityType>
+  <EntityType Name="Municipio">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EntidadId" Type="Int32" Nullable="false" />
+    <Property Name="Nombre" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Codigo" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Entidad" Relationship="YummyDBModel.FK_Municipios_Entidad" FromRole="Municipio" ToRole="Entidad" />
+    <NavigationProperty Name="ZonaTuristica" Relationship="YummyDBModel.FK_ZonaTuristica_Municipio" FromRole="Municipio" ToRole="ZonaTuristica" />
+  </EntityType>
+  <EntityType Name="Producto">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Descripcion" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="FechaCrea" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="FechaModifica" Type="DateTime" Precision="3" />
+    <Property Name="RegistroEliminado" Type="Boolean" Nullable="false" />
+    <Property Name="imagen" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Servicio">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Descripcion" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="FechaCrea" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="FechaModifica" Type="DateTime" Precision="3" />
+    <Property Name="RegistroEliminado" Type="Boolean" Nullable="false" />
+    <Property Name="Imagen" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="EmpresaServicio" Relationship="YummyDBModel.FK_EmpresaServicio_Servicio" FromRole="Servicio" ToRole="EmpresaServicio" />
+  </EntityType>
+  <EntityType Name="UsuarioMobile">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Apellidos" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Usuario" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Contrasena" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FechaCrea" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="FechaModifica" Type="DateTime" Precision="3" />
+    <Property Name="RegistroEliminado" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ZonaTuristica">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MunicipioId" Type="Int32" Nullable="false" />
+    <Property Name="Nombre" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Descripcion" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Imagen" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="FechaCrea" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="RegistroEliminado" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="EmpresaZonaTuristica" Relationship="YummyDBModel.FK_EmpresaZonaTuristica_ZonaTuristica" FromRole="ZonaTuristica" ToRole="EmpresaZonaTuristica" />
+    <NavigationProperty Name="Municipio" Relationship="YummyDBModel.FK_ZonaTuristica_Municipio" FromRole="ZonaTuristica" ToRole="Municipio" />
+  </EntityType>
+  <Association Name="FK_EmpresaServicio_Empresa">
+    <End Type="YummyDBModel.Empresa" Role="Empresa" Multiplicity="1" />
+    <End Type="YummyDBModel.EmpresaServicio" Role="EmpresaServicio" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Empresa">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="EmpresaServicio">
+        <PropertyRef Name="EmpresaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EmpresaZonaTuristica_Empresa">
+    <End Type="YummyDBModel.Empresa" Role="Empresa" Multiplicity="1" />
+    <End Type="YummyDBModel.EmpresaZonaTuristica" Role="EmpresaZonaTuristica" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Empresa">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="EmpresaZonaTuristica">
+        <PropertyRef Name="EmpresaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Imagenes_Empresa">
+    <End Type="YummyDBModel.Empresa" Role="Empresa" Multiplicity="1" />
+    <End Type="YummyDBModel.EmpresaImagen" Role="EmpresaImagen" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Empresa">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="EmpresaImagen">
+        <PropertyRef Name="EmpresaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EmpresaServicio_Servicio">
+    <End Type="YummyDBModel.Servicio" Role="Servicio" Multiplicity="1" />
+    <End Type="YummyDBModel.EmpresaServicio" Role="EmpresaServicio" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Servicio">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="EmpresaServicio">
+        <PropertyRef Name="ServicioId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EmpresaZonaTuristica_ZonaTuristica">
+    <End Type="YummyDBModel.ZonaTuristica" Role="ZonaTuristica" Multiplicity="1" />
+    <End Type="YummyDBModel.EmpresaZonaTuristica" Role="EmpresaZonaTuristica" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ZonaTuristica">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="EmpresaZonaTuristica">
+        <PropertyRef Name="ZonaTuristicaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Municipios_Entidad">
+    <End Type="YummyDBModel.Entidad" Role="Entidad" Multiplicity="1" />
+    <End Type="YummyDBModel.Municipio" Role="Municipio" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Entidad">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Municipio">
+        <PropertyRef Name="EntidadId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ZonaTuristica_Municipio">
+    <End Type="YummyDBModel.Municipio" Role="Municipio" Multiplicity="1" />
+    <End Type="YummyDBModel.ZonaTuristica" Role="ZonaTuristica" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Municipio">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ZonaTuristica">
+        <PropertyRef Name="MunicipioId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="EmpresaHorario">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EmpresaId" Type="Int32" />
+    <Property Name="Dia" Type="Int32" />
+    <Property Name="Hora" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FechaCrea" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="FechaModifica" Type="DateTime" Precision="3" />
+    <Property Name="RegistroEliminado" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Empresa" Relationship="YummyDBModel.FK_Horario_Empresa" FromRole="EmpresaHorario" ToRole="Empresa" />
+  </EntityType>
+  <Association Name="FK_Horario_Empresa">
+    <End Type="YummyDBModel.Empresa" Role="Empresa" Multiplicity="0..1" />
+    <End Type="YummyDBModel.EmpresaHorario" Role="EmpresaHorario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Empresa">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="EmpresaHorario">
+        <PropertyRef Name="EmpresaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="AspNetUsers">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="EmailConfirmed" Type="Boolean" Nullable="false" />
+    <Property Name="PasswordHash" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SecurityStamp" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PhoneNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PhoneNumberConfirmed" Type="Boolean" Nullable="false" />
+    <Property Name="TwoFactorEnabled" Type="Boolean" Nullable="false" />
+    <Property Name="LockoutEndDateUtc" Type="DateTime" Precision="3" />
+    <Property Name="LockoutEnabled" Type="Boolean" Nullable="false" />
+    <Property Name="AccessFailedCount" Type="Int32" Nullable="false" />
+    <Property Name="UserName" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Operador" Relationship="YummyDBModel.FK_Operador_AspNetUsers" FromRole="AspNetUsers" ToRole="Operador" />
+  </EntityType>
+  <EntityType Name="Operador">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EmpresaId" Type="Int32" Nullable="false" />
+    <Property Name="AspNetUsersId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="PrimerNombre" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="SegundoNombre" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="ApellidoPaterno" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="ApellidoMaterno" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="FechaNacimiento" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Ciudad" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Colonia" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Calle" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NoInterior" Type="Int32" Nullable="false" />
+    <Property Name="NoExterior" Type="Int32" Nullable="false" />
+    <Property Name="CodigoPostal" Type="Int32" Nullable="false" />
+    <Property Name="UrlFoto" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="FechaCrea" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="FechaModifica" Type="DateTime" Precision="3" />
+    <Property Name="Activo" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Operador_AspNetUsers">
+    <End Type="YummyDBModel.AspNetUsers" Role="AspNetUsers" Multiplicity="0..1" />
+    <End Type="YummyDBModel.Operador" Role="Operador" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Operador">
+        <PropertyRef Name="AspNetUsersId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Operador_Empresa">
+    <End Type="YummyDBModel.Empresa" Role="Empresa" Multiplicity="1" />
+    <End Type="YummyDBModel.Operador" Role="Operador" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Empresa">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Operador">
+        <PropertyRef Name="EmpresaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Usuario">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="PrimerNombre" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="SegundoNombre" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="ApellidoPaterno" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="ApellidoMaterno" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="FechaNacimiento" Type="DateTime" Precision="0" />
+    <Property Name="Ciudad" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="Colonia" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="Calle" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="NoExterior" Type="Int32" />
+    <Property Name="NoInterior" Type="Int32" Nullable="false" />
+    <Property Name="CodigoPostal" Type="Int32" />
+    <Property Name="UrlFoto" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="FechaCrea" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="FechaModifica" Type="DateTime" Precision="3" />
+    <Property Name="Activo" Type="Boolean" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Viajes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EmpresaId" Type="Int32" />
+    <Property Name="OperadorId" Type="Int32" />
+    <Property Name="Partida" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Arribo" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Hora" Type="Time" Precision="7" />
+    <Property Name="Dia" Type="Int32" />
+    <Property Name="Fecha" Type="DateTime" Precision="0" />
+    <Property Name="CupoMaximo" Type="Int32" />
+    <Property Name="Activo" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RegistroViajes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="EmpresaId" Type="Int32" />
+    <Property Name="ViajeId" Type="Int32" />
+    <Property Name="Recaudado" Type="Int32" />
+    <Property Name="CantidadPasajeros" Type="Int32" />
+    <Property Name="HoraInicio" Type="Time" Precision="7" />
+    <Property Name="HoraFinal" Type="Time" Precision="7" />
+    <Property Name="Fecha" Type="DateTime" Precision="0" />
+    <Property Name="Activo" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RegistroServicio">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="EmpresaId" Type="Int32" />
+    <Property Name="UsuarioId" Type="Int32" Nullable="false" />
+    <Property Name="FechaRegistro" Type="DateTime" Precision="0" />
+    <Property Name="HorarioRegistro" Type="Time" Precision="7" />
+    <Property Name="PagoAdultos" Type="Int32" />
+    <Property Name="PagoMenores" Type="Int32" />
+    <Property Name="CantidadMenores" Type="Int32" />
+    <Property Name="CantidadAdultos" Type="Int32" />
+    <Property Name="TotalPersonas" Type="Int32" />
+    <Property Name="PagoServicio" Type="Int32" />
+    <Property Name="PagodeServicios" Type="Int32" />
+    <Property Name="CupoSeguro" Type="Boolean" Nullable="false" />
+    <Property Name="RegistroEliminado" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LongLat">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ViajeId" Type="Int32" />
+    <Property Name="longitud" Type="Double" />
+    <Property Name="latitud" Type="Double" />
+  </EntityType>
+  <EntityType Name="RegistroTarjeta">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="UsuarioId" Type="Int32" Nullable="false" />
+    <Property Name="CustomerId" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="CardId" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="FechaRegistro" Type="DateTime" Precision="0" />
+    <Property Name="RegistroEliminado" Type="Boolean" Nullable="false" />
+  </EntityType>
+</Schema>

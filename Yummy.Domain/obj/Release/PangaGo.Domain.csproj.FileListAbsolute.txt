@@ -1,0 +1,14 @@
+C:\Users\Daniel\Desktop\Project\webApi\pangago-admin\PangaGo.Domain\bin\Release\PangaGo.Domain.dll.config
+C:\Users\Daniel\Desktop\Project\webApi\pangago-admin\PangaGo.Domain\bin\Release\PangaGo.Domain.dll
+C:\Users\Daniel\Desktop\Project\webApi\pangago-admin\PangaGo.Domain\bin\Release\PangaGo.Domain.pdb
+C:\Users\Daniel\Desktop\Project\webApi\pangago-admin\PangaGo.Domain\bin\Release\Dapper.dll
+C:\Users\Daniel\Desktop\Project\webApi\pangago-admin\PangaGo.Domain\bin\Release\EntityFramework.dll
+C:\Users\Daniel\Desktop\Project\webApi\pangago-admin\PangaGo.Domain\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\Daniel\Desktop\Project\webApi\pangago-admin\PangaGo.Domain\bin\Release\Dapper.xml
+C:\Users\Daniel\Desktop\Project\webApi\pangago-admin\PangaGo.Domain\bin\Release\EntityFramework.xml
+C:\Users\Daniel\Desktop\Project\webApi\pangago-admin\PangaGo.Domain\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\Daniel\Desktop\Project\webApi\pangago-admin\PangaGo.Domain\obj\Release\PangaGo.Domain.csproj.CoreCompileInputs.cache
+C:\Users\Daniel\Desktop\Project\webApi\pangago-admin\PangaGo.Domain\obj\Release\PangaGo.Domain.csproj.CopyComplete
+C:\Users\Daniel\Desktop\Project\webApi\pangago-admin\PangaGo.Domain\obj\Release\PangaGo.Domain.dll
+C:\Users\Daniel\Desktop\Project\webApi\pangago-admin\PangaGo.Domain\obj\Release\PangaGo.Domain.pdb
+C:\Users\Daniel\Desktop\Project\webApi\pangago-admin\PangaGo.Domain\obj\Release\PangaGo.Domain.csprojResolveAssemblyReference.cache
